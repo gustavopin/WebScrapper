@@ -4,22 +4,30 @@ To-do list
 
 (X) Learn the basics for web scrapping
 
-() Understand how to read a HTML
+(X) Understand how to read a HTML
 
-() Understand the properties of BeautifulSoup and other libraries, like Pandas
+(X) Understand the properties of BeautifulSoup and other libraries, like Pandas
 
-() Understand the structure behind the web scrapping
+(X) Understand the structure behind the web scrapping
 
-() Find a website to extract the data from
+(X) Find a website to extract the data from
 
-() Extract the HTML structure using the libraries
+(X) Extract the HTML structure using the libraries
 
-() Find the information that I want
+(X) Find the information that I want
 
-() Identify the information in the HTML
+(X) Identify the information in the HTML
 
-() Create a list for the parses
+() Understand the functionality of the structure for to create list/table
 
-() Create a table to store the data por Type and Price
+() Search for the wanted categories to isolate
+
+() Separate the wanted elements
+
+() Search for name of the item
+
+() Search for the description of the item
+
+() Create a table to store the name and description of the items
 
 () Create a xlsx file with the table
