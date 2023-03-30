@@ -22,7 +22,18 @@ table = soup.find('table', class_= "display")
 list_name = []
 
 #for function to find legendary names
-for elements in table:
-    name = table.find_all('a')
-    list_name.append(name)
-print(list_name)
+for element in table:
+    list_name.append(table.find_all('a'))
+for a in list_name[0]:
+    print(a)
+
+count = 0
+#count of the elements of the list
+for x in list_name[0]:
+    count = count + 1
+print(f'\nThere are {count} elements in this list')
+
+#list_name = [table.find_all('a') for i in table][0] 
+#for i in list_name:
+#print(i)
+#list comprehension for the funcion above
