@@ -1,24 +1,28 @@
 import requests
 from bs4 import BeautifulSoup
 
+
 #set the URL to get the data from
 url = 'http://www.vhpg.com/diablo-4-legendary-and-unique-items/'
 
 #url requests
 html = requests.get(url)
 
-#beautufilsoup object
+#beautufilsoup object to store the the contents of the website
 soup = BeautifulSoup(html.content, 'html.parser')
+#print(soup.prettify())
 
-#getting the information from the interested "body" of the html
-database = soup.find(id="vhpg")
-print(database.prettify())
+#table of content for legendaries
+table = soup.find('table', class_= "display")
 
-#finding the elements by class TBI
-#legendaries = database.find_all('div', class_="dataTables_wrapper no-footer")
-#print(legendaries.prettify())
+#remove the # of this print in case you want to see all the html elements inside the table
+#print(table.prettify())
 
-#for function to create the sequence TBI
-#for legendary in legendaries:
-    #name = legendary.find('a', class_="Legendary Name: ")
-    #print(name)
+#list for the names
+list_name = []
+
+#for function to find legendary names
+for elements in table:
+    name = table.find_all('a')
+    list_name.append(name)
+    print(list_name)

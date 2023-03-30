@@ -18,15 +18,23 @@ To-do list
 
 (X) Identify the information in the HTML
 
-() Understand the functionality of the structure for to create list/table
+(X) Understand the functionality of the structure for to create list/table
 
-() Search for the wanted categories to isolate
+(X) Search for the wanted categories to isolate
 
-() Separate the wanted elements
+(X) Separate the wanted elements
 
-() Search for name of the item
+(X) Search for name of the item
+
+    () Clear the name to remove the href and <a></a> to leave only the name of the item (*regex*)
 
 () Search for the description of the item
+
+    () Clear the description the same way done for the names
+
+() Search for the type of the item
+
+    () Clear the type of the amor the same way done for the names and descriptions
 
 () Create a table to store the name and description of the items
 
