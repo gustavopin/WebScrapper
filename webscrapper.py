@@ -25,4 +25,4 @@ list_name = []
 for elements in table:
     name = table.find_all('a')
     list_name.append(name)
-    print(list_name)
+print(list_name)
