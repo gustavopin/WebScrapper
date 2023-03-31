@@ -9,14 +9,11 @@ url = 'http://www.vhpg.com/diablo-4-legendary-and-unique-items/'
 html = requests.get(url)
 
 #beautufilsoup object to store the the contents of the website
-soup = BeautifulSoup(html.content, 'html.parser')
+soup = BeautifulSoup(html.content, 'lxml')
 #print(soup.prettify())
 
 #table of content for legendaries
 table = soup.find('table', class_= "display")
-
-#remove the # of this print in case you want to see all the html elements inside the table
-#print(table.prettify())
 
 #list for the names
 list_name = []
@@ -25,7 +22,7 @@ list_name = []
 for element in table:
     list_name.append(table.find_all('a'))
 for a in list_name[0]:
-    print(a)
+    print(a.get_text())
 
 count = 0
 #count of the elements of the list

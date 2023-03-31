@@ -26,7 +26,7 @@ To-do list
 
 (X) Search for name of the item
 
-    () Clear the name to remove the href and <a></a> to leave only the name of the item (*regex*)
+    (X) Clear the name to remove the href and <a></a> to leave only the name of the item (*regex*)
 
 () Search for the description of the item
 
