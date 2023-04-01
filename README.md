@@ -28,14 +28,12 @@ To-do list
 
     (X) Clear the name to remove the href and <a></a> to leave only the name of the item (*regex*)
 
-() Search for the description of the item
+(X) Search for the description of the item
 
-    () Clear the description the same way done for the names
+    (X) Clear the description the same way done for the names
 
 () Search for the type of the item
 
     () Clear the type of the amor the same way done for the names and descriptions
 
-() Create a table to store the name and description of the items
-
-() Create a xlsx file with the table
+() Create a excel file to store the name and description of the items

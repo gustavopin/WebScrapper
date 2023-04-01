@@ -1,5 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
+import pandas as pd
+import openpyxl
 
 
 #set the URL to get the data from
@@ -17,20 +19,35 @@ table = soup.find('table', class_= "display")
 
 #list for the names
 list_name = []
+list_description = []
 
-#for function to find legendary names
-for element in table:
-    list_name.append(table.find_all('a'))
-for a in list_name[0]:
-    print(a.get_text())
+#for function to find legendary names and store them
+for element in table.find_all('a'):
+    list_name.append(element.get_text())
+    for subelements in table.find_all('ul'):
+        list_description.append(subelements.get_text())
+print(list_name)
+print(list_description)
+
+#list for legendary description
+#list_description = []
+
+#for function to find legendary description
+#for element in table:
+    #list_description.append(element.get_text())
+#print(list_description)
 
 count = 0
 #count of the elements of the list
-for x in list_name[0]:
+for element in list_name[0]:
     count = count + 1
-print(f'\nThere are {count} elements in this list')
+print(f'\nThere are {count} legendaries on this list\n')
 
-#list_name = [table.find_all('a') for i in table][0] 
-#for i in list_name:
-#print(i)
-#list comprehension for the funcion above
+#creating talbe in xlsx
+df = pd.DataFrame({
+   'Legendary Names' : list_name,
+   'Legendary Description' : list_description
+})
+
+#saving a excel file
+df.to_excel('legendariesD4.xlsx', sheet_name = 'Leggo Description')
