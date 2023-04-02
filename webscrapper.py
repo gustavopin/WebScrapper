@@ -1,7 +1,6 @@
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, NavigableString
 import pandas as pd
-import openpyxl
 
 
 #set the URL to get the data from
@@ -17,6 +16,10 @@ soup = BeautifulSoup(html.content, 'lxml')
 #table of content for legendaries
 table = soup.find('table', class_= "display")
 
+#fiding more elements inside the HTML
+tbody = table.find('tbody')
+tr = tbody.find_all('tr')
+
 #list for the names
 list_name = []
 list_description = []
@@ -24,21 +27,18 @@ list_description = []
 #for function to find legendary names and store them
 for element in table.find_all('a'):
     list_name.append(element.get_text())
-    for subelements in table.find_all('ul'):
-        list_description.append(subelements.get_text())
-print(list_name)
-print(list_description)
 
-#list for legendary description
-#list_description = []
+#for function to find the description of the items
+for elements in tr:
+    list_temp = []
+    for dl in elements.find_all('td'):
+        #iterating for every line
+        for li in dl.find_all('ul'):
+            list_temp.append(li.text)
+    list_description.append(list_temp)
 
-#for function to find legendary description
-#for element in table:
-    #list_description.append(element.get_text())
-#print(list_description)
-
-count = 0
 #count of the elements of the list
+count = 0
 for element in list_name[0]:
     count = count + 1
 print(f'\nThere are {count} legendaries on this list\n')
