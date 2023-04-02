@@ -1,5 +1,6 @@
+
 import requests
-from bs4 import BeautifulSoup, NavigableString
+from bs4 import BeautifulSoup
 import pandas as pd
 
 
@@ -20,7 +21,7 @@ table = soup.find('table', class_= "display")
 tbody = table.find('tbody')
 tr = tbody.find_all('tr')
 
-#list for the names
+#lists
 list_name = []
 list_description = []
 
@@ -39,7 +40,7 @@ for elements in tr:
 
 #count of the elements of the list
 count = 0
-for element in list_name[0]:
+for element in list_name:
     count = count + 1
 print(f'\nThere are {count} legendaries on this list\n')
 
